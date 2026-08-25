@@ -3,7 +3,7 @@ id: BB-002
 titre: Rendre les frontières de dépendances vérifiables par le lint
 epic: EPIC-01
 type: tech
-statut: backlog
+statut: review
 priorite: P0
 estimation: S
 depends_on: [BB-001]
@@ -61,4 +61,60 @@ transformées en test plutôt qu'en convention ?
 
 ## Journal
 
-_(rempli par dev-senior)_
+**2026-08-25 — dev-senior**
+
+Les quatre critères d'acceptation sont couverts, chacun par un test. Sortie de vérification :
+
+```
+$ pnpm typecheck && pnpm lint && pnpm test && pnpm build
+ Test Files  2 passed (2)
+      Tests  5 passed (5)
+```
+
+Message obtenu sur une violation réelle :
+
+```
+libs/odds/domain/src/__frontieres__/remonte-vers-infrastructure.forbidden.ts
+  2:1  error  A project tagged with "type:domain" can only depend on libs tagged
+              with "type:domain", "type:shared"   @nx/enforce-module-boundaries
+```
+
+**Deux mécanismes, pas un.** C'est l'écart notable par rapport au plan du ticket.
+
+`bannedExternalImports` de Nx, prévu pour interdire `@nestjs/*` dans le domaine, ne s'est pas
+déclenché. Raison : Nx ne classe un import comme dépendance externe que si le paquet est
+réellement installé. Or NestJS ne l'est pas encore. La règle serait donc restée muette jusqu'au
+jour où quelqu'un installe NestJS — c'est-à-dire précisément le jour où on aurait eu besoin d'elle.
+Une protection qui n'existe qu'après coup ne protège rien.
+
+Remplacé par `no-restricted-imports`, une règle ESLint standard qui travaille sur la chaîne
+d'import sans rien résoudre. Résultat, une séparation nette :
+
+- **Nx `enforce-module-boundaries`** — quel projet interne peut en importer un autre (tags).
+- **`no-restricted-imports`** — quel paquet externe est interdit dans quelle couche.
+
+**Les fixtures sont dans de vrais projets.** Elles ne pouvaient pas vivre dans `tools/` : la règle
+Nx s'appuie sur les tags du projet auquel appartient le fichier analysé. Elles portent donc
+l'extension `.forbidden.ts`, exclue du lint courant et du typecheck — sans quoi le dépôt serait
+rouge en permanence. Le test les relit explicitement avec `--no-ignore`.
+
+**Le test vérifie le nom de la règle déclenchée**, pas seulement l'échec du lint. Un fichier peut
+échouer pour une tout autre raison (import introuvable, variable inutilisée) et donner un test vert
+qui ne prouve rien. Un quatrième test vérifie en sens inverse que le dépôt reste propre.
+
+**Erreur commise en route :** mon dernier test lançait `eslint --no-ignore libs`, ce qui réincluait
+les fixtures et faisait échouer le cas censé être vert. Corrigé en séparant deux fonctions,
+`lintFixture` et `lintNormal`.
+
+**Reste ouvert.** Les règles de couche interdisent aujourd'hui à `market-analytics` d'importer
+`match-data`. Le mécanisme d'échange légitime entre contextes — un port déclaré côté application —
+n'existe pas encore : il sera introduit avec le premier besoin réel, dans `BB-011`.
+
+## Ce que j'ai appris
+
+Une règle de lint peut être active, bien configurée, et ne rien protéger : `bannedExternalImports`
+était syntaxiquement correct et silencieux. D'où la valeur d'une fixture qui échoue — c'est le seul
+moyen de savoir qu'une protection fonctionne vraiment.
+
+Le nom du concept, pour l'entretien : *fitness function* architecturale. Une contrainte de
+conception vérifiée automatiquement à chaque exécution, au même titre qu'un test unitaire.

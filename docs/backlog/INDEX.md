@@ -7,7 +7,11 @@
 
 | backlog | ready | in-progress | review | done | blocked | dropped |
 |---|---|---|---|---|---|---|
-| 14 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 13 | 0 | 0 | 1 | 2 | 0 | 0 |
+
+## En attente de ta validation
+
+- [BB-002](tickets/BB-002-frontieres-de-dependances-lint.md) **Rendre les frontières de dépendances vérifiables par le lint**
 
 ## Par epic
 
@@ -18,7 +22,7 @@ Priorite P0 — 1/6 termines.
 | id | titre | type | prio | est. | statut | depend de |
 |---|---|---|---|---|---|---|
 | [BB-001](tickets/BB-001-initialiser-monorepo-nx.md) | Initialiser le monorepo Nx, pnpm et TypeScript strict | tech | P0 | M | done | — |
-| [BB-002](tickets/BB-002-frontieres-de-dependances-lint.md) | Rendre les frontières de dépendances vérifiables par le lint | tech | P0 | S | backlog | BB-001 |
+| [BB-002](tickets/BB-002-frontieres-de-dependances-lint.md) | Rendre les frontières de dépendances vérifiables par le lint | tech | P0 | S | review | BB-001 |
 | [BB-003](tickets/BB-003-environnement-local-docker.md) | Environnement local Docker (Postgres, Redis) et configuration typée | tech | P1 | S | backlog | BB-001 |
 | [BB-004](tickets/BB-004-socle-de-tests.md) | Socle de tests (Vitest, Testcontainers, horloge injectable) | tech | P0 | M | backlog | BB-001 |
 | [BB-005](tickets/BB-005-integration-continue.md) | Intégration continue (typecheck, lint, test, build) | tech | P1 | S | backlog | BB-001, BB-004 |
