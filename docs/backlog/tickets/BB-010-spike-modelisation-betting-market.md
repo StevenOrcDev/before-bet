@@ -3,7 +3,7 @@ id: BB-010
 titre: Spike et ADR - modélisation de BettingMarket
 epic: EPIC-05
 type: spike
-statut: ready
+statut: done
 priorite: P0
 estimation: M
 depends_on: []
@@ -67,4 +67,36 @@ objet. Question à savoir traiter après : comment garantir qu'ajouter un type d
 
 ## Journal
 
-_(rempli par architecte-senior)_
+**2026-08-25 — architecte-senior**
+
+Livrable : [`docs/adr/0001-modelisation-betting-market.md`](../../adr/0001-modelisation-betting-market.md),
+statut « proposé », en attente de validation. Timebox respectée, aucun code de production écrit.
+
+Les quatre critères d'acceptation sont couverts : la représentation retenue est nommée, trois
+alternatives sont écartées avec leur motif, les cas difficiles (quart de balle, marché joueur, trois
+issues) sont traités nommément, l'identité et sa forme sérialisée sont définies, et le mécanisme de
+versionnement est décrit avec son effet sur les statistiques déjà calculées.
+
+**Découverte non prévue par le ticket.** `BB-021` (dévigging) exige le jeu complet des sélections
+d'un même marché. Le modèle initialement envisagé n'offrait aucun objet pour porter cet ensemble.
+D'où l'introduction de `MarketFamily`, distincte de `BettingMarket`. Ce n'est pas un raffinement de
+confort : sans elle, `BB-021` aurait reconstruit ce concept de son côté, sous un autre nom.
+
+**Impacts backlog signalés à `po-tech`** (non appliqués, ce n'est pas mon rôle) :
+
+- `BB-011` doit intégrer `MarketFamily` et le registre des combinaisons supportées — estimation `M`
+  probablement sous-évaluée.
+- `BB-021` doit parler de famille et non de marché.
+- `BB-014` et `BB-015` : statistiques clés par `marketKey`, portant `ruleVersion`.
+- Nouveau ticket à ouvrir : sérialisation et parsing de la clé canonique.
+
+**Reste ouvert.** La question posée en fin d'ADR — garantir qu'un nouveau `kind` fasse échouer la
+compilation partout où il doit être traité — doit être tranchée dans `BB-011`, au moment d'écrire
+le registre.
+
+## Ce que j'ai appris
+
+Un concept métier manquant se révèle souvent par une contrainte venue d'ailleurs : c'est le besoin
+de dévigging qui a fait apparaître `MarketFamily`, pas l'analyse du marché de pari lui-même.
+Retenir aussi que l'identité d'un objet exposé dans une URL est un contrat public : sa forme
+sérialisée se conçoit en même temps que le modèle, jamais après.

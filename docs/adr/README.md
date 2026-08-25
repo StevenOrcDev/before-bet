@@ -37,4 +37,6 @@ Les effets positifs, les effets négatifs, et ce qu'on s'interdit désormais.
 
 ## Index
 
-_Aucun ADR pour l'instant. Le premier sortira du ticket `BB-010` (modélisation de `BettingMarket`)._
+| ADR | Titre | Statut | Ticket |
+|---|---|---|---|
+| [0001](0001-modelisation-betting-market.md) | Modélisation de `BettingMarket` | accepté | `BB-010` |

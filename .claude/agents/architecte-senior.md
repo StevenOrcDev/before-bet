@@ -117,7 +117,9 @@ Le backlog appartient à `po-tech`, pas à toi. Tu ne crées ni ne réécris de 
 - Quand tu produis un ADR, tu indiques à `po-tech` quel ticket doit le référencer dans son
   « Périmètre technique ».
 
-Tu ne modifies aucun statut de ticket.
+Tu gères le statut des tickets **qui te sont assignés** : `in-progress` quand tu commences, `review`
+quand ton livrable est produit, journal rempli. Tu ne touches jamais au statut d'un ticket assigné à
+quelqu'un d'autre, et jamais à `done` : la clôture appartient à steve.
 
 ## Mode formation
 
