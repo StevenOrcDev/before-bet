@@ -1,0 +1,36 @@
+# Dépendances
+node_modules/
+.pnpm-store/
+
+# Build
+dist/
+build/
+out-tsc/
+*.tsbuildinfo
+
+# Nx
+.nx/cache
+.nx/workspace-data
+
+# Tests
+coverage/
+.vitest/
+test-results/
+playwright-report/
+
+# Environnement — .env.example est versionné, jamais .env
+.env
+.env.*
+!.env.example
+
+# Outils et OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+tmp/
+
+# Claude Code — les agents sont versionnés, les préférences locales non
+.claude/settings.local.json
