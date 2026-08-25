@@ -1,0 +1,6 @@
+{
+  "name": "brief-application",
+  "sourceRoot": "libs/brief/application/src",
+  "projectType": "library",
+  "tags": ["type:application", "context:brief"]
+}

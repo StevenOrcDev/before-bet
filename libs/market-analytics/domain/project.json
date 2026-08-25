@@ -1,0 +1,6 @@
+{
+  "name": "market-analytics-domain",
+  "sourceRoot": "libs/market-analytics/domain/src",
+  "projectType": "library",
+  "tags": ["type:domain", "context:market-analytics"]
+}

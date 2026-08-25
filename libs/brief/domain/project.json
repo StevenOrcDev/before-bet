@@ -1,0 +1,6 @@
+{
+  "name": "brief-domain",
+  "sourceRoot": "libs/brief/domain/src",
+  "projectType": "library",
+  "tags": ["type:domain", "context:brief"]
+}

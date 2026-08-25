@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": [],
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    "paths": {
+      "@bb/kernel": ["./libs/shared/kernel/src/index.ts"],
+      "@bb/testing": ["./libs/shared/testing/src/index.ts"],
+
+      "@bb/catalog-domain": ["./libs/catalog/domain/src/index.ts"],
+      "@bb/catalog-application": ["./libs/catalog/application/src/index.ts"],
+      "@bb/catalog-infrastructure": ["./libs/catalog/infrastructure/src/index.ts"],
+
+      "@bb/match-data-domain": ["./libs/match-data/domain/src/index.ts"],
+      "@bb/match-data-application": ["./libs/match-data/application/src/index.ts"],
+      "@bb/match-data-infrastructure": ["./libs/match-data/infrastructure/src/index.ts"],
+
+      "@bb/odds-domain": ["./libs/odds/domain/src/index.ts"],
+      "@bb/odds-application": ["./libs/odds/application/src/index.ts"],
+      "@bb/odds-infrastructure": ["./libs/odds/infrastructure/src/index.ts"],
+
+      "@bb/market-analytics-domain": ["./libs/market-analytics/domain/src/index.ts"],
+      "@bb/market-analytics-application": ["./libs/market-analytics/application/src/index.ts"],
+      "@bb/market-analytics-infrastructure": ["./libs/market-analytics/infrastructure/src/index.ts"],
+
+      "@bb/brief-domain": ["./libs/brief/domain/src/index.ts"],
+      "@bb/brief-application": ["./libs/brief/application/src/index.ts"],
+      "@bb/brief-infrastructure": ["./libs/brief/infrastructure/src/index.ts"],
+
+      "@bb/identity-domain": ["./libs/identity/domain/src/index.ts"],
+      "@bb/identity-application": ["./libs/identity/application/src/index.ts"],
+      "@bb/identity-infrastructure": ["./libs/identity/infrastructure/src/index.ts"]
+    }
+  }
+}

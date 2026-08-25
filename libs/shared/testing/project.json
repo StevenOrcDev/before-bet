@@ -1,0 +1,6 @@
+{
+  "name": "shared-testing",
+  "sourceRoot": "libs/shared/testing/src",
+  "projectType": "library",
+  "tags": ["type:shared", "context:shared"]
+}

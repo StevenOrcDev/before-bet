@@ -1,0 +1,6 @@
+{
+  "name": "odds-infrastructure",
+  "sourceRoot": "libs/odds/infrastructure/src",
+  "projectType": "library",
+  "tags": ["type:infrastructure", "context:odds"]
+}

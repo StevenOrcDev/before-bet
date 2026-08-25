@@ -1,0 +1,6 @@
+{
+  "name": "match-data-domain",
+  "sourceRoot": "libs/match-data/domain/src",
+  "projectType": "library",
+  "tags": ["type:domain", "context:match-data"]
+}

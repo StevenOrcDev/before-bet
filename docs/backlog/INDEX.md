@@ -7,22 +7,17 @@
 
 | backlog | ready | in-progress | review | done | blocked | dropped |
 |---|---|---|---|---|---|---|
-| 14 | 2 | 0 | 0 | 0 | 0 | 0 |
-
-## Prochains tickets prets
-
-- [BB-001](tickets/BB-001-initialiser-monorepo-nx.md) **Initialiser le monorepo Nx, pnpm et TypeScript strict** — P0, M
-- [BB-010](tickets/BB-010-spike-modelisation-betting-market.md) **Spike et ADR - modélisation de BettingMarket** — P0, M
+| 14 | 0 | 0 | 0 | 2 | 0 | 0 |
 
 ## Par epic
 
 ### [EPIC-01 — Socle technique](epics/EPIC-01-socle-technique.md)
 
-Priorite P0 — 0/6 termines.
+Priorite P0 — 1/6 termines.
 
 | id | titre | type | prio | est. | statut | depend de |
 |---|---|---|---|---|---|---|
-| [BB-001](tickets/BB-001-initialiser-monorepo-nx.md) | Initialiser le monorepo Nx, pnpm et TypeScript strict | tech | P0 | M | ready | — |
+| [BB-001](tickets/BB-001-initialiser-monorepo-nx.md) | Initialiser le monorepo Nx, pnpm et TypeScript strict | tech | P0 | M | done | — |
 | [BB-002](tickets/BB-002-frontieres-de-dependances-lint.md) | Rendre les frontières de dépendances vérifiables par le lint | tech | P0 | S | backlog | BB-001 |
 | [BB-003](tickets/BB-003-environnement-local-docker.md) | Environnement local Docker (Postgres, Redis) et configuration typée | tech | P1 | S | backlog | BB-001 |
 | [BB-004](tickets/BB-004-socle-de-tests.md) | Socle de tests (Vitest, Testcontainers, horloge injectable) | tech | P0 | M | backlog | BB-001 |
@@ -55,11 +50,11 @@ Priorite P1 — 0/2 termines.
 
 ### [EPIC-05 — Moteur de marchés et statistiques (market-analytics)](epics/EPIC-05-moteur-de-marches.md)
 
-Priorite P0 — 0/6 termines.
+Priorite P0 — 1/6 termines.
 
 | id | titre | type | prio | est. | statut | depend de |
 |---|---|---|---|---|---|---|
-| [BB-010](tickets/BB-010-spike-modelisation-betting-market.md) | Spike et ADR - modélisation de BettingMarket | spike | P0 | M | ready | — |
+| [BB-010](tickets/BB-010-spike-modelisation-betting-market.md) | Spike et ADR - modélisation de BettingMarket | spike | P0 | M | done | — |
 | [BB-011](tickets/BB-011-resolution-rule-versionnee.md) | ResolutionRule versionnée et son registre | feature | P0 | M | backlog | BB-006, BB-010 |
 | [BB-012](tickets/BB-012-regle-over-under-buts.md) | Règle de résolution Over/Under sur les buts | feature | P0 | M | backlog | BB-011 |
 | [BB-013](tickets/BB-013-regle-btts.md) | Règle de résolution BTTS (les deux équipes marquent) | feature | P2 | S | backlog | BB-012 |

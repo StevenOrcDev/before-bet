@@ -1,0 +1,6 @@
+{
+  "name": "match-data-infrastructure",
+  "sourceRoot": "libs/match-data/infrastructure/src",
+  "projectType": "library",
+  "tags": ["type:infrastructure", "context:match-data"]
+}

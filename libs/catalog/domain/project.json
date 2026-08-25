@@ -1,0 +1,6 @@
+{
+  "name": "catalog-domain",
+  "sourceRoot": "libs/catalog/domain/src",
+  "projectType": "library",
+  "tags": ["type:domain", "context:catalog"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "catalog-application",
+  "sourceRoot": "libs/catalog/application/src",
+  "projectType": "library",
+  "tags": ["type:application", "context:catalog"]
+}

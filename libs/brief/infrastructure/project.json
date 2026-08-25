@@ -1,0 +1,6 @@
+{
+  "name": "brief-infrastructure",
+  "sourceRoot": "libs/brief/infrastructure/src",
+  "projectType": "library",
+  "tags": ["type:infrastructure", "context:brief"]
+}

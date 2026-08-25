@@ -1,0 +1,6 @@
+{
+  "name": "catalog-infrastructure",
+  "sourceRoot": "libs/catalog/infrastructure/src",
+  "projectType": "library",
+  "tags": ["type:infrastructure", "context:catalog"]
+}

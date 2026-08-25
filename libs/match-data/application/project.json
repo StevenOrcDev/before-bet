@@ -1,0 +1,6 @@
+{
+  "name": "match-data-application",
+  "sourceRoot": "libs/match-data/application/src",
+  "projectType": "library",
+  "tags": ["type:application", "context:match-data"]
+}

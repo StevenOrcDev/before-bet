@@ -1,0 +1,6 @@
+{
+  "name": "identity-infrastructure",
+  "sourceRoot": "libs/identity/infrastructure/src",
+  "projectType": "library",
+  "tags": ["type:infrastructure", "context:identity"]
+}

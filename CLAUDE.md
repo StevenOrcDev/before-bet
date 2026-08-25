@@ -84,7 +84,10 @@ controllers.
 
 ## Stack et conventions
 
-- Node 22 LTS, TypeScript strict (`strict`, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`), ESM.
+- Node 24 LTS, TypeScript strict (`strict`, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`), ESM.
+- **TypeScript reste en 6.x**, pas 7.x : `typescript-eslint` ne supporte pas encore TS 7, et
+  l'architecture de ce projet repose sur des règles de lint (BB-002). Le linter prime sur la version
+  du compilateur. À réévaluer quand `typescript-eslint` couvre TS 7.
 - Back : NestJS 11. Validation d'entrée : zod (+ pipe custom), pas de `class-validator` sur le domaine.
 - Données : PostgreSQL 17 + **Drizzle** (SQL-first, aucune magie qui fuit dans le domaine). Redis (cache + BullMQ).
 - Front : React 19, Vite, TanStack Router + TanStack Query, Tailwind. Dataviz : Visx ou Observable Plot.

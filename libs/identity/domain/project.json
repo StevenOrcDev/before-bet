@@ -1,0 +1,6 @@
+{
+  "name": "identity-domain",
+  "sourceRoot": "libs/identity/domain/src",
+  "projectType": "library",
+  "tags": ["type:domain", "context:identity"]
+}

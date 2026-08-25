@@ -1,0 +1,4 @@
+# Reglages pnpm (pnpm 11 ne lit plus le champ "pnpm" de package.json).
+# Nx a besoin de son script postinstall pour ses binaires natifs.
+allowBuilds:
+  nx: true

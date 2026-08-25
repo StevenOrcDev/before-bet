@@ -1,0 +1,6 @@
+{
+  "name": "market-analytics-application",
+  "sourceRoot": "libs/market-analytics/application/src",
+  "projectType": "library",
+  "tags": ["type:application", "context:market-analytics"]
+}

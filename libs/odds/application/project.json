@@ -1,0 +1,6 @@
+{
+  "name": "odds-application",
+  "sourceRoot": "libs/odds/application/src",
+  "projectType": "library",
+  "tags": ["type:application", "context:odds"]
+}

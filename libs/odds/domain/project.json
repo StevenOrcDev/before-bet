@@ -1,0 +1,6 @@
+{
+  "name": "odds-domain",
+  "sourceRoot": "libs/odds/domain/src",
+  "projectType": "library",
+  "tags": ["type:domain", "context:odds"]
+}

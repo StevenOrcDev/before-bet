@@ -1,0 +1,6 @@
+{
+  "name": "market-analytics-infrastructure",
+  "sourceRoot": "libs/market-analytics/infrastructure/src",
+  "projectType": "library",
+  "tags": ["type:infrastructure", "context:market-analytics"]
+}
